@@ -1,0 +1,25 @@
+<h1>Contacts Home Page</h1>
+<div class="row">
+    <div class="col-md-12"> 
+        <a class="btn btn-default btn-lg" ng-href="#/contact/add">Add Contact</a>
+    </div>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-hover table-striped contact-table"> 
+        <thead> 
+            <tr>
+                <th>Name</th> 
+                <th>E-mail</th> 
+                <th>Avatar</th> 
+            </tr> 
+        </thead>
+        <tbody>
+            <tr ng-repeat="contact in $ctrl.contacts track by $index" ng-click="$ctrl.manageContact('/contact/edit/' + $index)"> 
+                <td>{{contact.name}}</td> 
+                <td>{{contact.email}}</td> 
+                <td><img class="avatar" ng-src="{{contact.avatar}}" alt="Nice Avatar" /></td> 
+            </tr>
+        </tbody>
+    </table>
+</div>
